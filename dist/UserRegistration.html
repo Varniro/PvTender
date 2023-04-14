@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserRegistation</title>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+</style>
 <body>
-    <h1 class="text-4xl font-bold m-5 text-center text-white">Register as User</h1>
+    <h1 class="text-4xl font-bold m-5 text-center text-black">Register as User</h1>
     <form action="submit.php" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 m-4">
         <!-- user name -->
         <div class="mb-4">
@@ -17,11 +22,14 @@
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="user_name" name="user_name" type="text" placeholder="Enter Your Name">
         </div>
         <!-- City -->
-        <label class="block text-gray-700 font-bold mb-2" for="user_city">
-            City
-       </label>
-       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="user_city" name="user_city" type="text" placeholder="Enter Your City">
-   </div>
+        <div class="mb-4"> 
+
+            <label class="block text-gray-700 font-bold mb-2" for="user_city">
+                City
+           </label>
+           <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="user_city" name="user_city" type="text" placeholder="Enter Your City">
+       </div>
+        
         <!-- user phone Number-->
         
         <div class="mb-4">
@@ -37,9 +45,19 @@
             </label>
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact_email" name="contact_email" type="email" placeholder="Enter Contact Email">
         </div>
-        
+        <div class="mb-4">
+            <label class="block textcolor font-bold mb-2" for="password">
+                Password
+              </label>
+              <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="*********">
+        </div>
+        <div class="mb-4">
+            <label class="block textcolor font-bold mb-2" for="password">
+                Confirm Password
+              </label>
+              <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password_confirm" type="password_confirm" placeholder="*********">
+        </div>
     </form>
-    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
 
 </body>
 </html>
