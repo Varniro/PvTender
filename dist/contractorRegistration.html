@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactor Registration</title>
+</head>
+<body>
+    <h1 class="text-4xl font-bold m-5 text-center text-white">Register as User</h1>
+    <form action="submit.php" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 m-4">
+        <!-- Contractor name -->
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="Contractor_name">
+                 Name
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="user_name" name="user_name" type="text" placeholder="Enter Your Name">
+        </div>
+        <!-- City -->
+        <label class="block text-gray-700 font-bold mb-2" for="contractor_city">
+            City
+       </label>
+       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="user_city" name="contractor_city" type="text" placeholder="Enter Your City">
+   </div>
+        <!-- user phone Number-->
+        
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="contact_number">
+                Contact Number
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact_number" name="contact_number" type="tel" placeholder="Enter Contact Number">
+        </div>
+        <!-- Contact Email -->
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="contact_email">
+                Contact Email
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact_email" name="contact_email" type="email" placeholder="Enter Contact Email">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="Contractor_expertise">
+                 Expertise
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Contractor_expertise" name="Contractor_expertise" type="text" placeholder="Enter Your Expertise">
+        </div>
+    </form>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+</body>
+</html>
