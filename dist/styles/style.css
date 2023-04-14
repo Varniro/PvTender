@@ -99,7 +99,7 @@ body{
 #navbar li a.active{
     color: #088178;
 }
-#navbar li a.active::after,
+#navbar li a.active::after
 {
     content: "";
     width: 30%;
@@ -167,7 +167,7 @@ body{
   
   /* section cards */
   #cards{
-    padding-top: 100px;
+    padding-top: 20px;
     height: 200px; 
   }
   #card .divcards{
@@ -176,3 +176,22 @@ body{
   #cards h3{
     border: 1px solid #3f3d3d;
   }
+
+  #btnforbids btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #b83e3e;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+    
+   }
