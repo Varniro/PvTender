@@ -1,13 +1,14 @@
 import { auth, database, db } from '././firebase_config';
 import { getDatabase, ref as sRef, child,push, get, onValue, update, set } from "firebase/database";
 import { doc } from '@firebase/firestore';
-import { getAuth, signInWithEmailAndPassword ,updateProfile , createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword ,updateProfile , createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 onAuthStateChanged(auth, (user) => {
     if (user) {  
           document.getElementById('nav2').style.display = "none";
     } else {
         document.getElementById('nav1').style.display = "none";
+        console.log("pk")
     }
   })
 
@@ -36,3 +37,10 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('cardHolder').children[0].remove()
     })
   })
+
+document.getElementById('logout').addEventListener('click', (e) =>{
+    e.preventDefault();
+    signOut(auth).then(()=>{
+        window.location.href = "index.html"
+    })
+})

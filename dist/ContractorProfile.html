@@ -11,8 +11,66 @@
 
 </head>
 <style>
+  #header{
+
+    display: flex;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    align-items: center;
+
+}
+
+.navbar-brand{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3vh;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0%;
+}
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+     position: relative;  
+     display: flex;
+     align-items: center;
+                                                       
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 2.4vh;
+    font-weight: 300;
+    color: #3f3d3d;
+    transition: 0.3s ease;
+
+}
+#navbar li a:hover{
+    color: #088178;
+    
+}
+
+#navbar li a.active{
+    color: #088178;
+}
+#header h4{
+    color: #000000;
+    font-weight: 600;
+    font-size: 25px;
+}
+
     body{
-        margin-top:20px;
         color: #1a202c;
         text-align: left;
         background: rgb(2,0,36);
@@ -67,6 +125,23 @@ background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(133,24,129,0.6111694
     }
 </style>
 <body>
+  <nav id="nav1" class="navbar bg-body-tertiary" style="padding:1vh 3vw">
+    <div class="container-fluid" style="align-items: center;">
+      <a class="navbar-brand">PvTender</a>
+      <ul id="navbar">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="CreateAuction.html">Tenders</a></li>
+        <li><a href="blog.html">Bids</a></li>
+        <li><div class="dropdown">
+                <img src="res/admin.jpg" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" alt="admin" style="width: 3vh; height: 3vh;">
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="ContractorProfile.html">Profile</a></li>
+              <li><a class="dropdown-item" id="logout" href="#">Logout</a></li>
+            </ul>
+          </div></li>
+     </ul>
+    </div>
+  </nav>
     <div class="container">
         <div class="main-body">
               <div class="row gutters-sm" style="justify-content:center;">
@@ -74,7 +149,7 @@ background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(133,24,129,0.6111694
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" id="postImg" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <h4 id="name">John Doe</h4>
                           <p id="loc" class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>

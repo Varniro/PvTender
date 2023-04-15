@@ -28,8 +28,8 @@ background: linear-gradient(to left, #604e9e, #0c293c); /* W3C, IE 10+/ Edge, Fi
                     </div>
                     
                     <div class="mt-16">
-                        <h1 class="font-bold text-center text-3xl text-gray-900">Contractor Name</h1>
-                        <p class="text-center text-sm text-gray-400 font-medium">Expertise</p>
+                        <h1 id="name" class="font-bold text-center text-3xl text-gray-900">Contractor Name</h1>
+                        <p id="location" class="text-center text-sm text-gray-400 font-medium">Expertise</p>
                         <p>
                             <span>
                                 
@@ -39,29 +39,11 @@ background: linear-gradient(to left, #604e9e, #0c293c); /* W3C, IE 10+/ Edge, Fi
     
                         <div class="w-full">
                             <h3 class="font-medium text-gray-900 text-left px-6">Bids Made By You</h3>
-                            <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
-                                <div  class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                            <div id="holder" class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
+                                <div id="card" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                     <img src="Assets/icons8-bid-64.png" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
-                                        Bid 1
-                                        <span class="text-gray-500 text-xs">24 min ago</span>
+                                        <span>Bid 1</span>
                                 </div>
-    
-                                <div  class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
-                                    <img src="Assets/icons8-bid-64.png" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
-                                        Bid 2
-                                        <span class="text-gray-500 text-xs">42 min ago</span>
-                                </div>
-    
-                                <div  class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
-                                    <img src="Assets/icons8-bid-64.png" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
-                                    Bid 3 
-                                    <span class="text-gray-500 text-xs">49 min ago</span>
-                                </div>
-    
-                               
-    
-                               
-                                
                             </div>
                         </div>
                     </div>
@@ -69,7 +51,6 @@ background: linear-gradient(to left, #604e9e, #0c293c); /* W3C, IE 10+/ Edge, Fi
     
             </div>
         </div>
+        <script src="js/contBids.js"></script>
     </body>
     </html>
-</body>
-</html>

@@ -53888,6 +53888,7 @@ __webpack_require__.r(__webpack_exports__);
           document.getElementById('nav2').style.display = "none";
     } else {
         document.getElementById('nav1').style.display = "none";
+        console.log("pk")
     }
   })
 
@@ -53916,6 +53917,13 @@ __webpack_require__.r(__webpack_exports__);
         document.getElementById('cardHolder').children[0].remove()
     })
   })
+
+document.getElementById('logout').addEventListener('click', (e) =>{
+    e.preventDefault();
+    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.signOut)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth).then(()=>{
+        window.location.href = "index.html"
+    })
+})
 })();
 
 /******/ })()

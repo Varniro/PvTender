@@ -11,7 +11,11 @@ module.exports = {
         auction: './src/auction.js',
         conProf: './src/conProf.js',
         tender: './src/tender.js',
-        pay: './src/pay.js'
+        pay: './src/pay.js',
+        cnf: './src/cnf.js',
+        contBids: './src/contBids.js',
+        contractAct: './src/contractAct.js',
+        browse: './src/browse.js'
     },
     output:{
         path: path.resolve(__dirname, 'dist/js'),
