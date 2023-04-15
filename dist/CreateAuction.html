@@ -15,74 +15,100 @@
   width:399px;
   height:200px;
   
+} 
+.btn{
+    background-color: #e11d48;
+   
 }
+.btn:hover {
+    background-color: #a32227
+}
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+.heading{
+        color: white;
+    }
 </style>
 <body>
     <section class="relative pt-40 pb-12">
-        <div class="w-10/12 max-w-[1080px] flex flex-row justify-between items-center mx-auto">
-<!-- left part -->
-            <div>
-                <h1>Create Your Auction 
-                </h1>
-                <h1>Make Your Work Easy</h1>
-            </div>
-            <div id="rightbod" class="right flex flex-col justify-center max-w-[calc(100%-500px)] textcolor">
-                <div class="formbox">
-                    <!-- Title Of Post -->
-                <div class="mb-4">
-                    <label class="block text-gray-700 font-bold mb-2" for="Titleofpost">
-                        Title Of Post
-                    </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Titleofpost" name="Titleofpost" type="text" placeholder="Enter Title of Post eg. Mall">
+        
+            <h1 class="text-3xl font-bold mt-8 text-white text-center">CREATE AUCTION</h1>
+    
+            <div class="w-10/12 max-w-[1080px] flex flex-row justify-between items-center mx-auto">
+    <!-- left part -->
+                <div>
+                    <h1 id="heading" class=" text-3xl text-white font-extrabold">Create Your Auction 
+                    </h1>
+                    <h1 id="heading" class=" text-3xl text-white font-extrabold mt-3">This is where it turns into pure fun</h1>
                 </div>
-                    <!-- Category -->
+                <div id="rightbod" class="right flex flex-col justify-center max-w-[calc(100%-500px)] textcolor">
+                    <div class="formbox mt-8">
+                        <!-- Title Of Post -->
                     <div class="mb-4">
-                        <label class="block text-gray-700 font-bold mb-2" for="Categoryofpost">
-                            Category Of Post
+                        <label class="block text-white font-bold mb-2" for="Titleofpost">
+                            Title Of Post
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Categoryofpost" name="Categoryofpost" type="text" placeholder="Enter Category of post eg. Construction">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="Titleofpost" name="Titleofpost" type="text" placeholder="Enter Title of Post eg. Mall">
                     </div>
-                    <!-- Description -->
-                    <div class="mb-4">
-                        <label class="block text-gray-700 font-bold mb-2" for="description">
-                            Description
-                        </label>
-                        <textarea class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" rows="5" placeholder="Enter Description"></textarea>
+                        <!-- Category -->
+                        <div class="mb-4">
+                            <label class="block text-white font-bold mb-2" for="Categoryofpost">
+                                Category Of Post
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="Categoryofpost" name="Categoryofpost" type="text" placeholder="Enter Category of post eg. Construction">
+                        </div>
+                        <!-- Description -->
+                        <div class="mb-4">
+                            <label class="block text-white font-bold mb-2" for="description">
+                                Description
+                            </label>
+                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" rows="5" placeholder="Enter Description"></textarea>
+                        </div>
+                        <!-- Budget -->
+                        <div class="mb-4">
+                            <label class="block text-white font-bold mb-2 " for="Budget">
+                                Budget
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full  py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="Budget" name="Budget" type="number" placeholder="Enter Budget">
+                        </div>
+                        <!-- Location -->
+                        <div class="mb-4"> 
+    
+                            <label class="block text-white font-bold mb-2" for="Location">
+                                City
+                           </label>
+                           <input class="shadow appearance-none border rounded  py-2 px-3 w-full text-white leading-tight focus:outline-none focus:shadow-outline" id="Location" name="Location" type="text" placeholder="Enter Location">
+                       </div>
+                        <!-- Pictures -->
+                        <div class="mb-4">
+          
+                            <label class="block text-white font-bold mb-2" for="image">
+                              Image
+                            </label>
+                            <input class=" border rounded  py-2 px-3 text-white w-full leading-tight focus:outline-none focus:shadow-outline" id="image" type="file" multiple placeholder="upload images" required>
+                          </div>
+    
+                          <!-- Deadline -->
+                          <div class="mb-4">
+                            <label for="date" class="block text-white font-bold mb-2">Date</label>
+                            <input type="date" id="date" name="date" class="border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" required>
+                          </div>
+                          <!-- Submit Button -->
+                    <div class="flex items-center justify-between">
+                        <button class="btn  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" id="submitbt">
+                            Submit
+                        </button>
                     </div>
-                    <!-- Budget -->
-                    <div class="mb-4">
-                        <label class="block text-gray-700 font-bold mb-2" for="Budget">
-                            Budget
-                        </label>
-                        <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Budget" name="Budget" type="number" placeholder="Enter Budget">
                     </div>
-                    <!-- Location -->
-                    <div class="mb-4"> 
+                </div>
+            </div>
+        
+        </section>
 
-                        <label class="block text-gray-700 font-bold mb-2" for="Location">
-                            City
-                       </label>
-                       <input class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Location" name="Location" type="text" placeholder="Enter Location">
-                   </div>
-                    <!-- Pictures -->
-                    <div class="mb-4">
-      
-                        <label class="block text-gray-700 font-bold mb-2" for="image">
-                          Image
-                        </label>
-                        <input class=" border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file" multiple placeholder="upload images" required>
-                      </div>
-                      <!-- Submit Button -->
-                <div class="flex items-center justify-between">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" id="submitbt">
-                        Submit
-                    </button>
-                </div>
-                </div>
-            </div>
-        </div>
     </div>
-    </section>
+    
 
     <script src="js/createAuc.js"></script>
         
