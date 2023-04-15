@@ -174,10 +174,15 @@ body{
     border: 1px solid #3f3d3d;
   }
 
-  #btnforbids btns{
+  #btnforbids .btns{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding-bottom: 50px;;
+  }
+  .btns :hover{
+    box-shadow: 0 0 11px rgba(246, 223, 223, 0.2); 
+
   }
   button.normal{
     font-size: 14px;
@@ -192,3 +197,72 @@ body{
     transition: 0.2s;
     
    }
+
+   .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #b83e3e;
+    border-color: #b83e3e;
+  }
+
+
+  /* about */
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+.about-us{
+  height: 80%;
+  width: 100%;
+  padding-top: 50px;
+  background: #ddd;
+}
+.pic{
+  height: auto;
+  width:  302px;
+}
+.about{
+  width: 1130px;
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text{
+  width: 540px;
+}
+.text h2{
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+}
+.text h5{
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+span{
+  color: #b83e3e;
+}
+.text p{
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+.data{
+  margin-top: 30px;
+}
+.hire{
+  font-size: 18px;
+  background: #b83e3e;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.hire:hover{
+  background: #000;
+  border: 1px solid #b83e3e;
+}

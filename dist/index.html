@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>PvTender</title>
 </head>
-<body style="background-image:url('res/bg1.svg'); background-repeat:no-repeat; background-size:cover">
+<body style="background-image:url('res/bg1.svg'); background-repeat:no-repeat; background-size: contain">
 
     <nav id="nav1" class="navbar bg-body-tertiary" style="padding:1vh 3vw">
         <div class="container-fluid" style="align-items: center;">
@@ -39,16 +39,16 @@
         </div>
       </nav>
        
-    <div class="card-carousel-container" data-bs-ride="carousel">
+    <div class="card-carousel-container w-100" data-bs-ride="carousel">
         <div class="card-carousel-slider">
           <div class="card-carousel-item divcard">
             <div class="row row-cols-1 row-cols-md-3 m-4 text-center" id="cardHolder">
-                <div id="card" class="col">
+                <div id="card" class="col" style="display: flex; justify-items: center; align-items: center;">
                   <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-body">
+                    <div class="card-body w-100">
                       <img src="" class="card-img-top" alt="">
                       <ul class="list-unstyled mt-3 mb-4">
-                        <li>Title</li>
+                       <strong><li>Title</li></strong> 
                         <li>Category</li>
                         <li>lowest budget</li>
                         <li>deadline</li>
@@ -67,11 +67,27 @@
    
     <div class="btns">
    <button class="normal">Furnitures</button>
-   <button class="normal">Furnitures</button>
-   <button class="normal">Furnitures</button>
-   <button class="normal">Furnitures</button>
+   <button class="normal">Solar Panels</button>
+   <button class="normal">Electrician</button>
+   <button class="normal">Plumbing</button>
+   <button class="normal">Painting</button>
+   <button class="normal">Home Renovations</button>
     </div>
 
+</section>
+
+<section class="about-us">
+  <div class="about">
+   
+    <div class="text">
+      <h2>About Us</h2>
+      <h5>ahahhd wyfebhefh & <span>HJESVABUVEB</span></h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus ad sed harum itaque ullam enim quas, veniam accusantium, quia animi id eos adipisci iusto molestias asperiores explicabo cum vero atque amet corporis! Soluta illum facere consequuntur magni. Ullam dolorem repudiandae cumque voluptate consequatur consectetur, eos provident necessitatibus reiciendis corrupti!</p>
+      <div class="data">
+      <a href="#" class="hire">Contact Us</a>
+      </div>
+    </div>
+  </div>
 </section>
      <script src="script.js"></script>
     <script src="js/index.js"></script>
