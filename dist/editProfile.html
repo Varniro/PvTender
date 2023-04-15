@@ -114,7 +114,7 @@ form input[type="file"] {
     <div class="container">
       <div class="card">
         <div class="info">
-          <span>Edit Profile</span> <button id="savebutton">edit</button>
+          <span>Edit Profile</span> <button id="savebutton">save</button>
         </div>
         <!-- <img src="res/admin.jpg" alt="" style="width: 10rem; height: 10rem;"> -->
         <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -167,22 +167,21 @@ form input[type="file"] {
     <script>
         // for edit and save
         var savebutton = document.getElementById('savebutton');
-    var readonly = true;
+    var readonly = false;
     var inputs = document.querySelectorAll('input[type="text"]');
     savebutton.addEventListener('click',function(){
         
          for (var i=0; i<inputs.length; i++) {
-         inputs[i].toggleAttribute('readonly');
+         inputs[i].removeAttribute('readonly');
          };
     
-        if (savebutton.innerHTML == "edit") {
-          savebutton.innerHTML = "save";
-             } else {
-          savebutton.innerHTML = "edit";
-          }
-    
-    
-    
+
+        // if (savebutton.innerHTML == "edit") {
+        //   savebutton.innerHTML = "save";
+        //      } else {
+        //   savebutton.innerHTML = "edit";
+        //   }
+  
          
     });
 
