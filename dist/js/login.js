@@ -53883,14 +53883,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
-    if (user) {  
-          window.location.href = 'dis.html'
-          console.log('ok')
-    } else {
-      window.location.href = "index.html"
-    }
-  })
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {  
+//           window.location.href = 'index.html'
+//           console.log('ok')
+//     } else {
+//       window.location.href = "index.html"
+//     }
+//   })
 
 document.getElementById('sub').addEventListener('click', (e)=>{
     e.preventDefault();

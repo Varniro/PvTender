@@ -3,14 +3,14 @@ import { getDatabase, ref as sRef, child,push, get, onValue, update, set } from 
 import { doc } from '@firebase/firestore';
 import { getAuth, signInWithEmailAndPassword ,updateProfile , createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {  
-          window.location.href = 'dis.html'
-          console.log('ok')
-    } else {
-      window.location.href = "index.html"
-    }
-  })
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {  
+//           window.location.href = 'index.html'
+//           console.log('ok')
+//     } else {
+//       window.location.href = "index.html"
+//     }
+//   })
 
 document.getElementById('sub').addEventListener('click', (e)=>{
     e.preventDefault();
