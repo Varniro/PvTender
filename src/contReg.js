@@ -48,9 +48,9 @@ document.getElementById('sub').addEventListener('click', (e)=>{
             name: document.getElementById('user_name').value,
             city:  document.getElementById('user_city').value,
             contact: document.getElementById('contact_number').value,
-            userType: 'customer'
+            userType: 'contractor'
         }).then(()=>{
-            window.location.href = "index.html"
+            window.location.href = "dash.html"
         })
     })
     .catch((error) => {

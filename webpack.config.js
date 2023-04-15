@@ -5,7 +5,10 @@ module.exports = {
     entry:{
         index: './src/index.js',
         login: './src/login.js',
-        userReg: './src/userReg.js'
+        userReg: './src/userReg.js',
+        contReg: './src/contReg.js',
+        createAuc: './src/createAuc.js',
+        auction: './src/auction.js'
     },
     output:{
         path: path.resolve(__dirname, 'dist/js'),

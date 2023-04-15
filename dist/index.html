@@ -7,351 +7,60 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>PvTender</title>
 </head>
-<body>
+<body style="background-image:url('res/bg1.svg'); background-repeat:no-repeat; background-size:cover">
 
-    <section id="header">
-        
-        <h4>PvTender</h4>
-        
-        <div>
-           <ul id="navbar">
-              <li><a class="active" href="index.html">Home</a></li>
-              <li><a href="Tenders.html">Tenders</a></li>
-              <li><a href="blog.html">Bids</a></li>
-              <li><a href="about.html">Login</a></li>
-              <li><a href="contact.html">Sign Up</a></li>
-              
-           </ul>
+    <nav id="nav1" class="navbar bg-body-tertiary" style="padding:1vh 3vw">
+        <div class="container-fluid" style="align-items: center;">
+          <a class="navbar-brand">PvTendor</a>
+          <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="Tenders.html">Tenders</a></li>
+            <li><a href="blog.html">Bids</a></li>
+            <li><div class="dropdown">
+                    <img src="res/admin.jpg" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" alt="admin" style="width: 3vh; height: 3vh;">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </div></li>
+         </ul>
         </div>
-    
-        <div id="mobile">
-           
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <i id="bar" class="fa-solid fa-bars"></i>
+      </nav>
+
+      <nav id="nav2" class="navbar bg-body-tertiary" style="padding:1vh 3vw">
+        <div class="container-fluid" style="align-items: center;">
+          <a class="navbar-brand">PvTendor</a>
+          <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="Tenders.html">Tenders</a></li>
+            <li><a href="blog.html">Login</a></li>
+            <li><a href="blog.html">Sign Up</a></li>
+         </ul>
         </div>
-
-    </section>
-
-    <section id="header">
-        
-        <h4>PvTender</h4>
-        
-        <div>
-           <ul id="navbar">
-              <li><a class="active" href="index.html">Home</a></li>
-              <li><a href="Tenders.html">Tenders</a></li>
-              <li><a href="blog.html">Bids</a></li>
-             
-              <li><a href="contact.html"></a></li>
-              <img src="res/admin.jpg" alt="admin" style="width: 20px; height: 20px;">
-              
-           </ul>
-        </div>
-    
-        <div id="mobile">
-           
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <i id="bar" class="fa-solid fa-bars"></i>
-        </div>
-
-    </section>
-   
-    
-
-    <section id="cards"></section>
-
-    <!-- cards -->
+      </nav>
+       
     <div class="card-carousel-container" data-bs-ride="carousel">
         <div class="card-carousel-slider">
           <div class="card-carousel-item divcard">
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="row row-cols-1 row-cols-md-3 m-4 text-center">
                 <div class="col">
                   <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Free</h4>
-                    </div>
                     <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                      <img src="" class="card-img-top" alt="">
                       <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
+                        <li>Title</li>
+                        <li>Category</li>
+                        <li>lowest budget</li>
+                        <li>deadline</li>
                       </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">More info</button>
                     </div>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>20 users included</li>
-                        <li>10 GB of storage</li>
-                        <li>Priority email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                    <div class="card-header py-3 text-bg-primary border-primary">
-                      <h4 class="my-0 fw-normal">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>30 users included</li>
-                        <li>15 GB of storage</li>
-                        <li>Phone and email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          
-          <div class="card-carousel-item divcard">
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Free</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>20 users included</li>
-                        <li>10 GB of storage</li>
-                        <li>Priority email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                    <div class="card-header py-3 text-bg-primary border-primary">
-                      <h4 class="my-0 fw-normal">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>30 users included</li>
-                        <li>15 GB of storage</li>
-                        <li>Phone and email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card-carousel-item divcard">
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Free</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>20 users included</li>
-                        <li>10 GB of storage</li>
-                        <li>Priority email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                    <div class="card-header py-3 text-bg-primary border-primary">
-                      <h4 class="my-0 fw-normal">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>30 users included</li>
-                        <li>15 GB of storage</li>
-                        <li>Phone and email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card-carousel-item divcard">
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Free</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>20 users included</li>
-                        <li>10 GB of storage</li>
-                        <li>Priority email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                    <div class="card-header py-3 text-bg-primary border-primary">
-                      <h4 class="my-0 fw-normal">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>30 users included</li>
-                        <li>15 GB of storage</li>
-                        <li>Phone and email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card-carousel-item divcard">
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Free</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                      <h4 class="my-0 fw-normal">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>20 users included</li>
-                        <li>10 GB of storage</li>
-                        <li>Priority email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                    <div class="card-header py-3 text-bg-primary border-primary">
-                      <h4 class="my-0 fw-normal">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                      <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>30 users included</li>
-                        <li>15 GB of storage</li>
-                        <li>Phone and email support</li>
-                        <li>Help center access</li>
-                      </ul>
-                      <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="card-carousel-item divcard">
-            <div class="card" style="width: 18rem;">
-               
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
           </div>
         </div>
-        <a class="card-carousel-prev" href="javascript:void(0);" onclick="prevCard()">&#10094;</a>
-        <a class="card-carousel-next" href="javascript:void(0);" onclick="nextCard()">&#10095;</a>
+        <a class="card-carousel-prev" style="font-size: 3vw; color:white" href="javascript:void(0);" onclick="prevCard()">&#10094;</a>
+        <a class="card-carousel-next" style="font-size: 3vw; color:white" href="javascript:void(0);" onclick="nextCard()">&#10095;</a>
       </div>
   
 <section id="btnforbids">

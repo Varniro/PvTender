@@ -53871,7 +53871,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 /*!************************!*\
-  !*** ./src/userReg.js ***!
+  !*** ./src/contReg.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ././firebase_config */ "./src/firebase_config.js");
@@ -53928,9 +53928,9 @@ document.getElementById('sub').addEventListener('click', (e)=>{
             name: document.getElementById('user_name').value,
             city:  document.getElementById('user_city').value,
             contact: document.getElementById('contact_number').value,
-            userType: 'customer'
+            userType: 'contractor'
         }).then(()=>{
-            window.location.href = "index.html"
+            window.location.href = "dash.html"
         })
     })
     .catch((error) => {

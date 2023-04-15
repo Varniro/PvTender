@@ -53870,75 +53870,92 @@ const unwrap = (value) => reverseTransformCache.get(value);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!************************!*\
-  !*** ./src/userReg.js ***!
-  \************************/
+/*!**************************!*\
+  !*** ./src/createAuc.js ***!
+  \**************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ././firebase_config */ "./src/firebase_config.js");
+/* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./firebase_config */ "./src/firebase_config.js");
 /* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/esm/index.esm.js");
-/* harmony import */ var _firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @firebase/firestore */ "./node_modules/@firebase/firestore/dist/index.esm2017.js");
-/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
+/* harmony import */ var firebase_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/storage */ "./node_modules/firebase/storage/dist/esm/index.esm.js");
 
 
 
 
 
+let img
 
-document.getElementById('password_confirm').addEventListener('blur',(e)=>{
-    const password = document.getElementById('password').value
-    const passwordCNF = document.getElementById('password_confirm').value
-
-    if(password != passwordCNF){
-        alert('pass nt match')
-    }
+document.getElementById('image').addEventListener('change', (e)=>{
+    img = e.target.files[0]
 })
 
-document.getElementById('sub').addEventListener('click', (e)=>{
+document.getElementById('submitbt').addEventListener('click', (e)=>{
+    console.log('pressed')
     e.preventDefault();
+    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_2__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
+        if (user) {
+            const metadata = {
+                contentType: 'image',
+              };
 
-    if(document.getElementById('user_name').value == ""){
-        alert('Please enter a valid name.')
-        return;
-    }
-    if(document.getElementById('user_city').value == ""){
-        alert('Please enter a valid city.')
-        return;
-    }
-    if(document.getElementById('contact_number').value == ""){
-        alert('Please enter a valid number.')
-        return;
-    }
-    if(document.getElementById('contact_email').value == ""){
-        alert('Please enter a valid email.')
-        return;
-    }
-    if(document.getElementById('password').value == ""){
-        alert('Please enter a valid password.')
-        return;
-    }
+            const file = document.getElementById('image').value
+            const newPostKey = (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.push)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.child)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database), 'posts')).key;
+            const name = file.split('\\')
+            console.log(name)
+            const date = new Date();
+            const storageRef = (0,firebase_storage__WEBPACK_IMPORTED_MODULE_3__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.storage,`${user.uid}/${newPostKey}/${name[2]}`);
+            
+            const img_upload = (0,firebase_storage__WEBPACK_IMPORTED_MODULE_3__.uploadBytesResumable)(storageRef, img)
 
-    const email = document.getElementById('contact_email').value
-    const password = document.getElementById('password').value
+            img_upload.on('state_changed', (snap) =>{
 
-    ;(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.createUserWithEmailAndPassword)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;   
-        (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.set)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`users/${user.uid}`),{
-            name: document.getElementById('user_name').value,
-            city:  document.getElementById('user_city').value,
-            contact: document.getElementById('contact_number').value,
-            userType: 'customer'
-        }).then(()=>{
-            window.location.href = "index.html"
-        })
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
-    });
+            },
+                (err) => { console.log(err) },
+                async () => {
+                    (0,firebase_storage__WEBPACK_IMPORTED_MODULE_3__.getDownloadURL)(img_upload.snapshot.ref)
+                        .then(url => {
+                            const postData = {
+                                // author: user.ngoName,
+                                uid: user.uid,
+                                desc: document.getElementById('description').value,
+                                title: document.getElementById('Titleofpost').value,
+                                date: date.getDate(),
+                                category: document.getElementById('Categoryofpost').value,
+                                location: document.getElementById('Location').value,
+                                budget: document.getElementById('Budget'),
+                                img: url
+                              };
+                
+                             const updates = {};
+                            updates['/posts/' + newPostKey] = postData;
+                            updates['/users/' + user.uid + '/posts/' + newPostKey] = postData;
+                
+                            (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database), updates);
+                        })
+                        .then(() => { alert("post created")})
+                })
+
+            console.log(user.uid)
+        } else {
+            document.location.href = "login.html"
+        }
+      });
 })
+
+;(0,firebase_auth__WEBPACK_IMPORTED_MODULE_2__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+    //   document.location.href = "ngodashboard.html"
+      // ...
+    } else {
+        
+        window.location.href = 'login.html'
+      // User is signed out
+      // ...
+    }
+});
 })();
 
 /******/ })()

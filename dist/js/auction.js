@@ -53871,7 +53871,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 /*!************************!*\
-  !*** ./src/userReg.js ***!
+  !*** ./src/auction.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ././firebase_config */ "./src/firebase_config.js");
@@ -53883,62 +53883,80 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-document.getElementById('password_confirm').addEventListener('blur',(e)=>{
-    const password = document.getElementById('password').value
-    const passwordCNF = document.getElementById('password_confirm').value
-
-    if(password != passwordCNF){
-        alert('pass nt match')
+(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
+    if (user) {  
+          
+    } else {
+      window.location.href = "index.html"
     }
+  })
+
+const queryString = window.location.search.toString().slice(4);   
+
+let lowest;
+let budget;
+
+console.log(queryString)
+
+;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}`), (snap) =>{
+        document.getElementById('aucTitle').innerHTML = snap.val().title
+        document.getElementById('desc').innerHTML = snap.val().desc
+        document.getElementById('postImg').src = snap.val().img
+        lowest = snap.val().lBid;
+        budget = snap.val().budget
+        document.getElementById('lowest').innerHTML = "Current Lowest Bid: " + (snap.val().lBid || "No bids yet.")
+        document.getElementById('lwrThn').innerHTML = "Place a lower bid then Rs." + (snap.val().lBid || snap.val().budget)
 })
 
-document.getElementById('sub').addEventListener('click', (e)=>{
-    e.preventDefault();
-
-    if(document.getElementById('user_name').value == ""){
-        alert('Please enter a valid name.')
-        return;
-    }
-    if(document.getElementById('user_city').value == ""){
-        alert('Please enter a valid city.')
-        return;
-    }
-    if(document.getElementById('contact_number').value == ""){
-        alert('Please enter a valid number.')
-        return;
-    }
-    if(document.getElementById('contact_email').value == ""){
-        alert('Please enter a valid email.')
-        return;
-    }
-    if(document.getElementById('password').value == ""){
-        alert('Please enter a valid password.')
-        return;
-    }
-
-    const email = document.getElementById('contact_email').value
-    const password = document.getElementById('password').value
-
-    ;(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.createUserWithEmailAndPassword)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;   
-        (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.set)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`users/${user.uid}`),{
-            name: document.getElementById('user_name').value,
-            city:  document.getElementById('user_city').value,
-            contact: document.getElementById('contact_number').value,
-            userType: 'customer'
-        }).then(()=>{
-            window.location.href = "index.html"
-        })
+;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `posts/${queryString}/bids`), (snap) =>{
+    document.getElementsByClassName('list-group')[0].innerHTML = ""
+    snap.forEach((bid) =>{
+        const item = document.createElement('li');
+        item.classList = "list-group-item";
+        item.innerHTML = bid.val().bid;
+        document.getElementsByClassName('list-group')[0].appendChild(item)
     })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
-    });
 })
+
+document.getElementById('cnfBid').addEventListener('click', (e)=>{
+    if(document.getElementById('bid').value < budget){
+        if(lowest){
+            if(document.getElementById('bid').value <lowest){
+                (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
+                    if (user) {  
+                        (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}/bids/${user.uid}`),{
+                            bid : document.getElementById('bid').value
+                        })
+                        ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}`),{
+                            lBid: document.getElementById('bid').value
+                        })
+                        ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `users/${user.uid}/bids`),{
+                            queryString: document.getElementById('bid').value
+                        })
+                    } else {
+                        window.location.href = "index.html"
+                    }
+                    })
+            }
+        }else{
+            (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
+                if (user) {  
+                    (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}/bids/${user.uid}`),{
+                        bid : document.getElementById('bid').value
+                    })
+                    ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}`),{
+                        lBid: document.getElementById('bid').value
+                    })
+                    ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `users/${user.uid}/bids`),{
+                        [queryString]: document.getElementById('bid').value
+                    })
+                } else {
+                    window.location.href = "index.html"
+                }
+                })
+        }
+    }
+})  
 })();
 
 /******/ })()

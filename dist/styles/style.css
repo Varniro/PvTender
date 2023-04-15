@@ -58,34 +58,43 @@ body{
 #header{
 
     display: flex;
+    min-width: 100vw;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
+    padding: 20px;
     background-color: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
+    align-items: center;
 
+}
+
+.navbar-brand{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3vh;
 }
 
 #navbar{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
-
+    margin: 0%;
 }
 #navbar li{
     list-style: none;
     padding: 0 20px;
      position: relative;  
+     display: flex;
+     align-items: center;
                                                        
 }
 
 #navbar li a{
     text-decoration: none;
-    font-size: 16px;
+    font-size: 2.4vh;
     font-weight: 300;
     color: #3f3d3d;
     transition: 0.3s ease;
@@ -98,18 +107,6 @@ body{
 
 #navbar li a.active{
     color: #088178;
-}
-#navbar li a.active::after
-{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-    
-  
 }
 #header h4{
     color: #000000;

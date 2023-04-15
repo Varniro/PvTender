@@ -53874,14 +53874,23 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/esm/index.esm.js");
-/* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ././firebase_config */ "./src/firebase_config.js");
+/* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ././firebase_config */ "./src/firebase_config.js");
+/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/esm/index.esm.js");
+/* harmony import */ var _firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @firebase/firestore */ "./node_modules/@firebase/firestore/dist/index.esm2017.js");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
 
 
 
-(0,firebase_database__WEBPACK_IMPORTED_MODULE_0__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_0__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_1__.database),(snap)=>{
-    console.log(snap.val());
-})
+
+
+(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
+    if (user) {  
+          document.getElementById('nav2').style.display = "none";
+    } else {
+        document.getElementById('nav1').style.display = "none";
+    }
+  })
+
 })();
 
 /******/ })()
