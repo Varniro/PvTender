@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contractor Activity</title>
+    <style>
+           body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .navbar {
+            background-color: #e34c67;
+            overflow: hidden;
+        }
+        .navbar h2 {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            margin: 0;
+        }
+        .parent{
+            margin:auto;
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+    padding: 50px;
+    border: 1px solid #e34c67;
+    border-radius: 10px;
+        }
+        .bid-details,
+        .Contractor-bids-list{
+            height: auto;
+    padding: 50px;
+        }
+        .namePrize{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .Contractor-bids-list{
+            display: grid;
+        }
+        .bid-details{
+            height: 100%;;
+        }
+        .normal{
+            margin-top: 7px;
+ font-size: 14px;
+ font-weight: 600;
+ padding: 15px 30px;
+ color: #fff;
+ background-color: #e34c67;
+ border-radius: 4px;
+ cursor: pointer;
+ border: none;
+ outline: none;
+ transition: 0.2s;
+ 
+}
+.normal:hover{
+    color: black;
+ background-color: #fff;
+ border: 1px solid #e34c67;
+}
+td{
+    padding: 5px 5px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- Heading -->
+        <h2> Contractor Activities</h2>
+      
+    </div>
+
+    <div class="parent">
+
+        <div class="bid-details">
+          <h2>Your Auctions</h2>
+          <h3>Auction1</h3>
+          <p>Description About Auction</p>
+          <p>Prize</p>
+        </div>
+
+        <div class="Contractor-bids-list">
+            <h2>Bids By Contructors</h2>
+            <div class="namePrize">
+               <div>
+                <div id="subtotal">
+                    <h3>Anshuman Contractors</h3>
+                    <table>
+                      <tr>
+                          <td>Rating</td>
+                          <td>4.3</td>
+                      </tr>
+                      <tr>
+                          <td>Bid Amount</td>
+                          <td>250000</td>
+                      </tr>
+                      <tr>
+                        <button class="normal">Profile</button>
+                      </tr>
+                    </table>
+                    <button class="normal">Proceed To Checkout</button>
+                 </div>
+               </div>
+
+
+               
+            </div>
+        </div>
+
+       
+
+
+
+
+
+    
+</body>
+</html>

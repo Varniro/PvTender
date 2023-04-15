@@ -114,7 +114,7 @@ form input[type="file"] {
     <div class="container">
       <div class="card">
         <div class="info">
-          <span>Edit Profile</span> <button id="savebutton">save</button>
+          <span>Edit Profile</span> 
         </div>
         <!-- <img src="res/admin.jpg" alt="" style="width: 10rem; height: 10rem;"> -->
         <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -157,24 +157,22 @@ form input[type="file"] {
             <span>Description</span>
             <input type="text" readonly value="xyz" />
           </div>
+          <button id="savebutton" style="background-color: black; padding-right: 3px " >save</button>
         </div>
       </div>
     </div>
 
 
-
-
     <script>
         // for edit and save
-        var savebutton = document.getElementById('savebutton');
-    var readonly = false;
-    var inputs = document.querySelectorAll('input[type="text"]');
-    savebutton.addEventListener('click',function(){
+    //     var savebutton = document.getElementById('savebutton');
+    // var readonly = false;
+    // var inputs = document.querySelectorAll('input[type="text"]');
+    // savebutton.addEventListener('click',function(){
         
-         for (var i=0; i<inputs.length; i++) {
-         inputs[i].removeAttribute('readonly');
-         };
-    
+    //      for (var i=0; i<inputs.length; i++) {
+    //      inputs[i].removeAttribute('readonly');
+    //      };
 
         // if (savebutton.innerHTML == "edit") {
         //   savebutton.innerHTML = "save";
@@ -183,7 +181,10 @@ form input[type="file"] {
         //   }
   
          
-    });
+    // });
+    let reado = document.getElementsByClassName("forms");
+    reado.toggleAttribute("redonly");
+
 
     // for submission of pp
     var loadFile = function (event) {
