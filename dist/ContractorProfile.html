@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractor Profile</title>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+    img{
+        border-radius: 9999px;
+    }
+    .checked {
+  color: orange;
+}
+</style>
+<body>
+    <section class="flex flex-row">
+        <!-- left part -->
+        <div id="image" class=" mr-6">
+            <img src="Assets/13-512.webp" alt=""
+            loading="lazy"
+            width="400"
+            height="240">
+        </div>
+        <!-- Right Part -->
+        <div class="ml-16 gap-5 flex flex-col  max-w-[50%]">
+            <!-- Contractor Profile -->
+            <h1>Contractor Profile</h1>
+            <!-- Name of Contractor -->
+            <h2>Harsh Maurya</h2>
+            <!-- Designation -->
+            <p>Designation</p>
+            <!-- Bio Heading -->
+            <h2>Bio</h2>
+            <!--  Bio-->
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias fugiat repudiandae aliquid eos vero quos, qui minima animi possimus dicta.</p>
+            <!-- Location -->
+            <h2>Location</h2>
+            <!-- Previous Work -->
+            
+                <div style="max-width:20vw" id="card">
+                    <img src="Assets/images.jfif" alt=""
+                    loading="lazy">
+                    <p class="opacity-80">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae necessitatibus, vitae tempore quam corporis culpa ea unde id iure non dolores et facilis ab nulla.
+                      </p>
+                    
+                      <p> Given By Aditya</p>
+                </div>
+           
+           
+            <!-- Rating -->
+         <div class="flex">
+         <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+            </div>
+        
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline max-w-xs" type="button">Edit</button>
+
+        </div>
+        <!-- Edit Button -->
+    </section>
+</body>
+</html>
