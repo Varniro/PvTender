@@ -24,8 +24,11 @@
     background-color: #a32227
 }
 body{
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-color: #111017;
+    background: #2b5876;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .heading{
         color: white;
@@ -50,28 +53,28 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
                         <label class="block text-white font-bold mb-2" for="Titleofpost">
                             Title Of Post
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="Titleofpost" name="Titleofpost" type="text" placeholder="Enter Title of Post eg. Mall">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="Titleofpost" name="Titleofpost" type="text" placeholder="Enter Title of Post eg. Mall">
                     </div>
                         <!-- Category -->
                         <div class="mb-4">
                             <label class="block text-white font-bold mb-2" for="Categoryofpost">
                                 Category Of Post
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="Categoryofpost" name="Categoryofpost" type="text" placeholder="Enter Category of post eg. Construction">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="Categoryofpost" name="Categoryofpost" type="text" placeholder="Enter Category of post eg. Construction">
                         </div>
                         <!-- Description -->
                         <div class="mb-4">
                             <label class="block text-white font-bold mb-2" for="description">
                                 Description
                             </label>
-                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" rows="5" placeholder="Enter Description"></textarea>
+                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" rows="5" placeholder="Enter Description"></textarea>
                         </div>
                         <!-- Budget -->
                         <div class="mb-4">
                             <label class="block text-white font-bold mb-2 " for="Budget">
                                 Budget
                             </label>
-                            <input class="shadow appearance-none border rounded w-full  py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="Budget" name="Budget" type="number" placeholder="Enter Budget">
+                            <input class="shadow appearance-none border rounded w-full  py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" id="Budget" name="Budget" type="number" placeholder="Enter Budget">
                         </div>
                         <!-- Location -->
                         <div class="mb-4"> 
@@ -79,7 +82,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
                             <label class="block text-white font-bold mb-2" for="Location">
                                 City
                            </label>
-                           <input class="shadow appearance-none border rounded  py-2 px-3 w-full text-white leading-tight focus:outline-none focus:shadow-outline" id="Location" name="Location" type="text" placeholder="Enter Location">
+                           <input class="shadow appearance-none border rounded  py-2 px-3 w-full text-black leading-tight focus:outline-none focus:shadow-outline" id="Location" name="Location" type="text" placeholder="Enter Location">
                        </div>
                         <!-- Pictures -->
                         <div class="mb-4">
@@ -93,7 +96,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
                           <!-- Deadline -->
                           <div class="mb-4">
                             <label for="date" class="block text-white font-bold mb-2">Date</label>
-                            <input type="date" id="date" name="date" class="border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" required>
+                            <input type="date" id="date" name="date" class="border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" required>
                           </div>
                           <!-- Submit Button -->
                     <div class="flex items-center justify-between">
