@@ -19,11 +19,12 @@ document.getElementById('sub').addEventListener('click', (e)=>{
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
 
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
+        window.location.href = "index.html"
         // ...
     })
     .catch((error) => {
@@ -36,5 +37,5 @@ document.getElementById('sub').addEventListener('click', (e)=>{
 
 document.getElementById('signUp').addEventListener('click', (e) =>{
     e.preventDefault()
-    window.location.href = 'https://sites.google.com/view/code-fiesta/home'
+    window.location.href = 'index.html'
 })

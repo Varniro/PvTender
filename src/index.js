@@ -10,3 +10,18 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('nav1').style.display = "none";
     }
   })
+
+
+onValue(sRef(database, `posts`), (snap) =>{
+    snap.forEach(post => {
+        // document.getElementById('cardHolder').innerHTML = ""
+        let card = document.getElementById('card').cloneNode(true);
+        card.children[0].children[0].children[1].children[0].innerHTML = post.val().title
+        card.children[0].children[0].children[1].children[1].innerHTML = "Budget - Rs."+post.val().budget
+        card.children[0].children[0].children[1].children[2].innerHTML = "Lowest Bid - Rs."+post.val().lBid
+        card.children[0].children[0].children[1].children[3].innerHTML = "Deadline "+post.val().deadline
+        card.children[0].children[0].children[0].src = post.val().img
+        document.getElementById('cardHolder').appendChild(card)
+    });
+    document.getElementById('cardHolder').children[0].remove()
+})

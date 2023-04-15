@@ -53899,11 +53899,12 @@ document.getElementById('sub').addEventListener('click', (e)=>{
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
 
-    ;(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.createUserWithEmailAndPassword)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, email, password)
+    ;(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.signInWithEmailAndPassword)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, email, password)
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
+        window.location.href = "index.html"
         // ...
     })
     .catch((error) => {
@@ -53916,7 +53917,7 @@ document.getElementById('sub').addEventListener('click', (e)=>{
 
 document.getElementById('signUp').addEventListener('click', (e) =>{
     e.preventDefault()
-    window.location.href = 'https://sites.google.com/view/code-fiesta/home'
+    window.location.href = 'index.html'
 })
 })();
 
