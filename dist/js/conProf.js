@@ -53871,7 +53871,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 /*!************************!*\
-  !*** ./src/auction.js ***!
+  !*** ./src/conProf.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ././firebase_config */ "./src/firebase_config.js");
@@ -53883,80 +53883,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const queryString = window.location.search.toString().slice(4);   
+
 (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
     if (user) {  
-          
+        const queryString = window.location.search.toString().slice(4);   
+        if(queryString !=  user.uid){
+            document.getElementById('edit').style.display = "none"
+        }
     } else {
       window.location.href = "index.html"
     }
   })
 
-const queryString = window.location.search.toString().slice(4);   
 
-let lowest;
-let budget;
-
-console.log(queryString)
-
-;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}`), (snap) =>{
-        document.getElementById('aucTitle').innerHTML = snap.val().title
-        document.getElementById('desc').innerHTML = snap.val().desc
+;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`users/${queryString}`), (snap) =>{
+        document.getElementById('name').innerHTML = snap.val().name
+        document.getElementById('loc').innerHTML = snap.val().city
         document.getElementById('postImg').src = snap.val().img
-        lowest = parseInt(snap.val().lBid);
-        budget = parseInt(snap.val().budget);
+        lowest = snap.val().lBid;
+        budget = snap.val().budget
         document.getElementById('lowest').innerHTML = "Current Lowest Bid: " + (snap.val().lBid || "No bids yet.")
         document.getElementById('lwrThn').innerHTML = "Place a lower bid then Rs." + (snap.val().lBid || snap.val().budget)
 })
-
-;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `posts/${queryString}/bids`), (snap) =>{
-    document.getElementsByClassName('list-group')[0].innerHTML = ""
-    snap.forEach((bid) =>{
-        const item = document.createElement('li');
-        item.classList = "list-group-item";
-        item.innerHTML = bid.val().bid;
-        document.getElementsByClassName('list-group')[0].appendChild(item)
-    })
-})
-
-document.getElementById('cnfBid').addEventListener('click', (e)=>{
-    if(parseInt(document.getElementById('bid').value) < budget){
-        if(lowest){
-            if(parseInt(document.getElementById('bid').value) <lowest){
-                (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
-                    if (user) {  
-                        (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}/bids/${user.uid}`),{
-                            bid : document.getElementById('bid').value
-                        })
-                        ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}`),{
-                            lBid: document.getElementById('bid').value
-                        })
-                        ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `users/${user.uid}/bids`),{
-                            queryString: document.getElementById('bid').value
-                        })
-                    } else {
-                        window.location.href = "index.html"
-                    }
-                    })
-            }
-        }else{
-            (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.auth, (user) => {
-                if (user) {  
-                    (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}/bids/${user.uid}`),{
-                        bid : document.getElementById('bid').value
-                    })
-                    ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database,`posts/${queryString}`),{
-                        lBid: document.getElementById('bid').value
-                    })
-                    ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.update)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `users/${user.uid}/bids`),{
-                        [queryString]: document.getElementById('bid').value
-                    })
-                } else {
-                    window.location.href = "index.html"
-                }
-                })
-        }
-    }
-})  
 })();
 
 /******/ })()

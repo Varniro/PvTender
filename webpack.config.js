@@ -8,7 +8,10 @@ module.exports = {
         userReg: './src/userReg.js',
         contReg: './src/contReg.js',
         createAuc: './src/createAuc.js',
-        auction: './src/auction.js'
+        auction: './src/auction.js',
+        conProf: './src/conProf.js',
+        tender: './src/tender.js',
+        pay: './src/pay.js'
     },
     output:{
         path: path.resolve(__dirname, 'dist/js'),

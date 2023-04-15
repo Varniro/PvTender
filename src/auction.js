@@ -22,8 +22,8 @@ onValue(sRef(database,`posts/${queryString}`), (snap) =>{
         document.getElementById('aucTitle').innerHTML = snap.val().title
         document.getElementById('desc').innerHTML = snap.val().desc
         document.getElementById('postImg').src = snap.val().img
-        lowest = snap.val().lBid;
-        budget = snap.val().budget
+        lowest = parseInt(snap.val().lBid);
+        budget = parseInt(snap.val().budget);
         document.getElementById('lowest').innerHTML = "Current Lowest Bid: " + (snap.val().lBid || "No bids yet.")
         document.getElementById('lwrThn').innerHTML = "Place a lower bid then Rs." + (snap.val().lBid || snap.val().budget)
 })
@@ -39,9 +39,9 @@ onValue(sRef(database, `posts/${queryString}/bids`), (snap) =>{
 })
 
 document.getElementById('cnfBid').addEventListener('click', (e)=>{
-    if(document.getElementById('bid').value < budget){
+    if(parseInt(document.getElementById('bid').value) < budget){
         if(lowest){
-            if(document.getElementById('bid').value <lowest){
+            if(parseInt(document.getElementById('bid').value) <lowest){
                 onAuthStateChanged(auth, (user) => {
                     if (user) {  
                         update(sRef(database,`posts/${queryString}/bids/${user.uid}`),{

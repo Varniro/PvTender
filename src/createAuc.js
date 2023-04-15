@@ -39,10 +39,10 @@ document.getElementById('submitbt').addEventListener('click', (e)=>{
                                 uid: user.uid,
                                 desc: document.getElementById('description').value,
                                 title: document.getElementById('Titleofpost').value,
-                                date: date.getDate(),
+                                date: document.getElementById('date').value,
                                 category: document.getElementById('Categoryofpost').value,
                                 location: document.getElementById('Location').value,
-                                budget: document.getElementById('Budget'),
+                                budget: document.getElementById('Budget').value,
                                 img: url
                               };
                 
@@ -52,7 +52,7 @@ document.getElementById('submitbt').addEventListener('click', (e)=>{
                 
                             update(sRef(database), updates);
                         })
-                        .then(() => { alert("post created")})
+                        .then(() => { alert("post created"); window.location.href = "index.html"})
                 })
 
             console.log(user.uid)

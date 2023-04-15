@@ -53891,20 +53891,31 @@ __webpack_require__.r(__webpack_exports__);
     }
   })
 
-
-;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `posts`), (snap) =>{
-    snap.forEach(post => {
-        // document.getElementById('cardHolder').innerHTML = ""
-        let card = document.getElementById('card').cloneNode(true);
-        card.children[0].children[0].children[1].children[0].innerHTML = post.val().title
-        card.children[0].children[0].children[1].children[1].innerHTML = "Budget - Rs."+post.val().budget
-        card.children[0].children[0].children[1].children[2].innerHTML = "Lowest Bid - Rs."+post.val().lBid
-        card.children[0].children[0].children[1].children[3].innerHTML = "Deadline "+post.val().deadline
-        card.children[0].children[0].children[0].src = post.val().img
-        document.getElementById('cardHolder').appendChild(card)
-    });
-    document.getElementById('cardHolder').children[0].remove()
-})
+  window.addEventListener("DOMContentLoaded", (event) => {
+    ;(0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.onValue)((0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.ref)(_firebase_config__WEBPACK_IMPORTED_MODULE_0__.database, `posts`), (snap) =>{
+        var count = 0
+        snap.forEach(post => {
+            // document.getElementById('cardHolder').innerHTML = ""
+            let card = document.getElementById('card').cloneNode(true);
+            card.children[0].children[0].children[1].children[0].innerHTML = post.val().title
+            card.children[0].children[0].children[1].children[1].innerHTML = "Budget - Rs."+post.val().budget
+            card.children[0].children[0].children[1].children[2].innerHTML = "Lowest Bid - Rs."+post.val().lBid
+            card.children[0].children[0].children[1].children[3].innerHTML = "Deadline "+post.val().date
+            card.children[0].children[0].children[0].src = post.val().img
+            document.getElementById('cardHolder').appendChild(card)
+            const id = Object.keys(snap.val())[count]
+            card.children[0].children[0].children[2].addEventListener('click',(e)=>{
+                e.preventDefault();
+                window.location.href = `auction.html?id=` + id
+            })
+    
+            console.log(Object.keys(snap.val())[count])
+    
+            count++;
+        });
+        document.getElementById('cardHolder').children[0].remove()
+    })
+  })
 })();
 
 /******/ })()
