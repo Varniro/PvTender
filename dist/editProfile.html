@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+
+    <style>
+     
+
+       /* for bio */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #eee;
+      }
+      .card {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .card .info {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #e1dede;
+        background-color: #e5e5e5;
+      }
+      .card .info button {
+        height: 30px;
+        width: 80px;
+        border: none;
+        color: #fff;
+        border-radius: 4px;
+        background-color: #000;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      .card .forms {
+        padding: 15px;
+      }
+      .card .inputs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+      .card .inputs span {
+        font-size: 20px;
+      }
+      .card .inputs input {
+        height: 40px;
+        padding: 0px 10px;
+        font-size: 17px;
+        box-shadow: none;
+        outline: none;
+      }
+      .card .inputs input[type="text"][readonly] {
+        border: 2px solid rgba(0, 0, 0, 0);
+      }
+
+
+      /* for pp */
+      .profile-pic {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-pic:hover {
+    background-color: rgba(0,0,0,.5);
+    z-index: 10000;
+    color: #fff;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.profile-pic span {
+    display: inline-block;
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+}
+
+form input[type="file"] {
+          display: none;
+          cursor: pointer;
+ }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="card">
+        <div class="info">
+          <span>Edit Profile</span> <button id="savebutton">edit</button>
+        </div>
+        <!-- <img src="res/admin.jpg" alt="" style="width: 10rem; height: 10rem;"> -->
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="fileToUpload">
+          <div class="profile-pic" style="background-image: url('res/admin.jpg')">
+              <span class="glyphicon glyphicon-camera"></span>
+              <span>Change Image</span>
+          </div>
+          </label>
+          <input type="File" name="fileToUpload" id="fileToUpload">
+        </form>
+
+        <div class="forms">
+          <div class="inputs">
+            <span>First Name</span> <input type="text" readonly value="harsh" />
+          </div>
+          <div class="inputs">
+            <span>Last Name</span> <input type="text" readonly value="maurya" />
+          </div>
+          <div class="inputs">
+            <span>Bio</span>
+            <input type="text" readonly value="xyz" />
+          </div>
+          <div class="inputs">
+            <span>Location</span>
+            <input type="text" readonly value="jaipur" />
+          </div>
+          <div class="inputs">
+            <span>Country</span>
+            <input type="text" readonly value="xyz" />
+          </div>
+          <div class="inputs">
+            <span>Past Works</span>
+            <form class="inputs">
+                <input type="file" id="myFile" name="filename">
+                
+              </form>
+          </div>
+          <div class="inputs">
+            <span>Description</span>
+            <input type="text" readonly value="xyz" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script>
+        // for edit and save
+        var savebutton = document.getElementById('savebutton');
+    var readonly = true;
+    var inputs = document.querySelectorAll('input[type="text"]');
+    savebutton.addEventListener('click',function(){
+        
+         for (var i=0; i<inputs.length; i++) {
+         inputs[i].toggleAttribute('readonly');
+         };
+    
+        if (savebutton.innerHTML == "edit") {
+          savebutton.innerHTML = "save";
+             } else {
+          savebutton.innerHTML = "edit";
+          }
+    
+    
+    
+         
+    });
+
+    // for submission of pp
+    var loadFile = function (event) {
+  var image = document.getElementById("output");
+  image.src = URL.createObjectURL(event.target.files[0]);
+};
+      </script>
+  </body>
+
+</html>
